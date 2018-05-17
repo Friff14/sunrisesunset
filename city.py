@@ -47,7 +47,11 @@ if __name__ == '__main__':
     for iteration in cities:
         city = City(iteration['city'], iteration['state'])
         print("Initializing years for", city.city, ',', city.state)
-        city.init_years(start=2004, end=2019)
+        try:
+            city.init_years(start=2004, end=2019)
+        except Year.NavyDoesntHaveThatDataException:
+            print("The Navy doesn't have that data. Skipping for now.")
+            continue
         print("Years initialized")
 
         for year in range(2004, 2019):
