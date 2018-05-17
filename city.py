@@ -52,6 +52,9 @@ if __name__ == '__main__':
         except Year.NavyDoesntHaveThatDataException:
             print("The Navy doesn't have that data. Skipping for now.")
             continue
+        except Exception:
+            print("There was a different error I hadn't anticipated.")
+            continue
         print("Years initialized")
 
         for year in range(2004, 2019):
