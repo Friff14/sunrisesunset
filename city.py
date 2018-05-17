@@ -53,7 +53,7 @@ if __name__ == '__main__':
         for year in range(2004, 2019):
             datelist = pd.date_range(
                 pd.datetime(day=1, month=1, year=year),
-                pd.datetime(day=31, month=12, year=2019)
+                pd.datetime(day=31, month=12, year=year)
             )
             row = [city.city, city.state, year]
             for date in datelist:
